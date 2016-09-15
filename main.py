@@ -23,9 +23,9 @@ else:
 	file = open(filename, 'w+') # create the file too if it doesn't exist
 
 if (file.read() == ""): # write out header if it doesn't exist
-	file.write(','.join(Symbols) + "\n")
+	file.write('Date,' + ','.join(Symbols) + '\n')
 
-newDataRow = getBidTime(Symbols[0]) # start off new data row with the last updated time
+newDataRow = getBidTime(Symbols[0]) + ', ' # start off new data row with the last updated time
 
 for symbol in Symbols: # loops over the specified symbols and saves the bid price of each one
 	newDataRow += getBid(symbol)
